@@ -79,9 +79,6 @@ class App extends Component {
             resume_link={RESUME_LINK}
             mail_to_address={MAILING_ADDRESS}
           />
-          <br />
-          {/* <h1 style={{ alignContent: "center" }}>Projects</h1> */}
-          {projectList}
           <Footer
             linkedin_link={LINKEDIN_LINK}
             github_link={GITHUB_LINK}

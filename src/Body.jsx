@@ -7,37 +7,36 @@ class Body extends Component {
   render() {
     return (
       <div className="container">
-        {/* <div className="row">
-          <h1 style={{ textAlign: "center" }}>Hi, I'm Victor.</h1>
-          <p>
-            This is my new website written using React and hosted with AWS S3
-            and Route53. You can find all the useful links like my resume and
-            GitHub pages down in the footer below. If you'd like to see the
-            previous version of my website, you can see it{" "}
-            <a
-              target="_blank"
-              rel="noopener noreferrer"
-              href="http://victorchau.me.s3-website-us-east-1.amazonaws.com/"
-            >
-              here
-            </a>
-            .
-          </p>
-          <br />
-        </div> */}
-
         <div className="row" style={{ paddingTop: "10px" }}>
           <div className="col-6">
             <img
               src={image}
-              alt="Victor Chau"
               style={{
                 objectFit: "cover",
-                width: "100%"
+                width: "100%",
+                alt: "Victor Chau"
               }}
             />
           </div>
           <div className="col-6">
+            <h2>Hi, I'm Victor.</h2>
+            <p>
+              This is my newest version of my personal website written using
+              React and hosted with AWS S3 and Route53. I've opted for a more
+              simple and minimalist design for this version. You can find all
+              the useful links like my resume and GitHub pages using the icons
+              down below. If you'd like to see the previous version of my
+              website, you can see it{" "}
+              <a
+                target="_blank"
+                rel="noopener noreferrer"
+                href="http://victorchau.me.s3-website-us-east-1.amazonaws.com/"
+              >
+                here
+              </a>
+              .
+            </p>
+            <br />
             <h2>A little about me.</h2>
             <p>
               I'm an upcoming Fall 2019 graduate from the University of Texas at
@@ -52,7 +51,7 @@ class Body extends Component {
               >
                 here
               </a>{" "}
-              or by clicking on the document icon in the footer down below.
+              or by clicking on the document icon down below.
             </p>
             <p>
               In my spare time I love playing sports like tennis and volleyball,
