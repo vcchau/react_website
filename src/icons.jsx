@@ -6,6 +6,19 @@ class Icons extends Component {
     return (
       <div style={this.props.style}>
         <a
+          href={this.props.resume_link}
+          target="_blank"
+          rel="noopener noreferrer"
+          title="Resume"
+          styles={{
+            color: "black",
+            margin: "5px 10px",
+            hovertextdecoration: "none"
+          }}
+          className="fa fa-file-text"
+          alt="Resume"
+        />
+        <a
           href={this.props.linkedin_link}
           target="_blank"
           rel="noopener noreferrer"
@@ -43,19 +56,6 @@ class Icons extends Component {
           }}
           className="fa fa-gitlab"
           alt="GitLab"
-        />
-        <a
-          href={this.props.resume_link}
-          target="_blank"
-          rel="noopener noreferrer"
-          title="Resume"
-          styles={{
-            color: "black",
-            margin: "5px 10px",
-            hovertextdecoration: "none"
-          }}
-          className="fa fa-file-text"
-          alt="Resume"
         />
         <a
           href={this.props.mail_to_address}

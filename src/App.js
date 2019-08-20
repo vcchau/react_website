@@ -1,13 +1,18 @@
 import React, { Component } from "react";
+
+// Components
 import "./App.css";
 import Footer from "./Footer.jsx";
-import Body from "./Body.jsx";
-import Project from "./Project.jsx";
+import Home from "./Home.jsx";
+import Projects from "./Projects.jsx";
 import MyNavbar from "./Navbar.jsx";
 
-import { Navbar, NavItem } from "react-bootstrap";
-import { Link, animateScroll as scroll } from "react-scroll";
+// React-Router
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
+// Icon links
+const PREV_SITE_LINK =
+  "http://victorchau.me.s3-website-us-east-1.amazonaws.com/";
 const LINKEDIN_LINK = "https://www.linkedin.com/in/victorchau8";
 const GITHUB_LINK = "https://github.com/vcchau";
 const GITLAB_LINK = "https://gitlab.com/vcchau";
@@ -15,73 +20,36 @@ const RESUME_LINK =
   "https://drive.google.com/file/d/1CPj4reIhLphQCEIMEtJMRMi5ARtUhrOt/view";
 const MAILING_ADDRESS = "mailto:vcchau@gmail.edu";
 
-const projects = [
-  {
-    title: "Parks Are Awesome",
-    image: "parksareawesomehome.png",
-    alt: "Parks Are Awesome home page",
-    tools: [
-      "Python",
-      "React",
-      "SQLAlchemy",
-      "Docker",
-      "Postman",
-      "Amazon Web Services"
-    ],
-    description:
-      "A complete web service designed to promote parks and encourage users to explore their natural beauty."
-  },
-  {
-    title: "Daily Weather",
-    image: "daily_weather_3.png",
-    alt: "Daily Weather home page",
-    tools: ["Java", "AccuWeather API", "Android Studio"],
-    description:
-      "Daily Weather is an app I created as a result of a past living situation. My past apartment room had no windows, so I decided a fun and helpful solution would be to create my very own weather app."
-  },
-  {
-    title: "Gun Sounds",
-    image: "gun_sounds_finger_gun.png",
-    alt: "Gun Sounds",
-    tools: ["Java", "Android Studio"],
-    description:
-      "Gun Sounds takes your favorite childhood gun sound emulator and combines it today's gyroscope sensors. You can choose from multiple guns (more to be added) and fire by either tapping the screen or tilting your phone up and down quickly as if firing a real gun. Please be careful when using this app in public as it may give off the wrong impression. "
-  },
-  {
-    title: "Tap Heroes",
-    image: "taphero.png",
-    alt: "Tap Heroes",
-    tools: ["Java", "Android Studio"],
-    description:
-      "Tap Hero was a fun game that I made while exploring Android Studio."
-  }
-];
-
 class App extends Component {
   render() {
-    const projectList = projects.map(d => (
-      <Project
-        title={d.title}
-        image={d.image}
-        alt={d.alt}
-        tools={d.tools}
-        description={d.description}
-      />
-    ));
+    /**
+     * We use render={() => <Component/>} so that we can pass props down to the child components that we render.
+     * This isn't supported if we specify component={Component} like we do with the Projects component.
+     */
     return (
       // #e1e9f5
       <div style={{ backgroundColor: "white" }}>
         <div className="container">
-          <Body
-            linkedin_link={LINKEDIN_LINK}
-            github_link={GITHUB_LINK}
-            gitlab_link={GITLAB_LINK}
-            resume_link={RESUME_LINK}
-            mail_to_address={MAILING_ADDRESS}
-          />
-          <br />
-          {/* <h1 style={{ alignContent: "center" }}>Projects</h1> */}
-          {projectList}
+          <MyNavbar />
+          <Router>
+            <Switch>
+              <Route
+                path="/"
+                exact
+                render={() => (
+                  <Home
+                    prev_site_link={PREV_SITE_LINK}
+                    linkedin_link={LINKEDIN_LINK}
+                    github_link={GITHUB_LINK}
+                    gitlab_link={GITLAB_LINK}
+                    resume_link={RESUME_LINK}
+                    mail_to_address={MAILING_ADDRESS}
+                  />
+                )}
+              />
+              <Route path="/projects" exact component={Projects} />
+            </Switch>
+          </Router>
           <Footer
             linkedin_link={LINKEDIN_LINK}
             github_link={GITHUB_LINK}
