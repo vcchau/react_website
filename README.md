@@ -1,4 +1,8 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Workflow
+
+1. Make changes to source files
+2. Build using `npm run build`
+3. Push to S3 with `aws sync build/ s3://{bucket_name}`
 
 ## Available Scripts
 
