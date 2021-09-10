@@ -22,6 +22,7 @@ class Projects extends Component {
       },
       {
         title: "Parks Are Awesome",
+        link: "https://gitlab.com/asikerd/parksareaweso.me",
         image: "parksareawesomehome.png",
         alt: "Parks Are Awesome home page",
         tools: [
@@ -38,6 +39,7 @@ class Projects extends Component {
       },
       {
         title: "Daily Weather",
+        link: "https://github.com/vcchau/Daily_Weather",
         image: "daily_weather_3.png",
         alt: "Daily Weather home page",
         tools: ["Java", "AccuWeather API", "Android Studio"],
@@ -46,6 +48,7 @@ class Projects extends Component {
       },
       {
         title: "Gun Sounds",
+        link: "https://github.com/vcchau/Gun-Sounds",
         image: "gun_sounds_finger_gun.png",
         alt: "Gun Sounds",
         tools: ["Java", "Android Studio"],
@@ -54,6 +57,7 @@ class Projects extends Component {
       },
       {
         title: "Tap Heroes",
+        link: "https://github.com/vcchau/Tap-Heroes",
         image: "taphero.png",
         alt: "Tap Heroes",
         tools: ["Java", "Android Studio"],
@@ -69,6 +73,7 @@ class Projects extends Component {
         {this.state.projects.map(d => (
           <Project
             title={d.title}
+            link={d.link}
             image={d.image}
             alt={d.alt}
             tools={d.tools}

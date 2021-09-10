@@ -21,7 +21,7 @@ class Footer extends Component {
             resume_link={this.props.resume_link}
             mail_to_address={this.props.mail_to_address}
           />
-          <h5>© Victor Chau 2019</h5>
+          <h5>© Victor Chau 2021</h5>
         </div>
       </footer>
     );

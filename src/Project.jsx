@@ -8,9 +8,14 @@ class Project extends Component {
       <div className="row">
         <hr style={{ border: "1px solid", width: "100%", color: "#e1e9f5" }} />
 
-        <h2><a href={this.props.url}>{this.props.title}</a></h2>
-        <a href={this.props.url}>{this.props.url}</a>
-        <h2>{this.props.link}</h2>
+        <h2>
+          <a 
+            target="_blank"
+            rel="noopener noreferrer"
+            href={this.props.link}>
+              {this.props.title}
+          </a>
+        </h2>
         <div className="row">
           <div className="col-6">
             <img
