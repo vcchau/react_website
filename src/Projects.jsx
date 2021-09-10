@@ -6,6 +6,7 @@ class Projects extends Component {
     projects: [
       {
         title: "Reel Time",
+        link: "https://github.com/vcchau/reel-time",
         image: "reel_time.png",
         alt: "Reel time home page",
         tools: [
